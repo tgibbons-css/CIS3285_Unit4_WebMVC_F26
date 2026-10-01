@@ -1,5 +1,9 @@
 @model StudentModel
 
+@*
+    This view receives one StudentModel and displays the student so the user can confirm
+    which record will be deleted. Displaying this page alone does not delete anything.
+*@
 @{
     ViewData["Title"] = "Delete Student";
 }
@@ -28,7 +32,9 @@
     </dd>
 </dl>
 
+@* Submitting this form sends a POST request to Delete; the controller then removes the student. *@
 <form asp-action="Delete" method="post">
+    @* Include the record id so the controller knows which student to delete. *@
     <input type="hidden" asp-for="Id" />
     <button type="submit" class="btn btn-danger">Delete</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>

@@ -1,5 +1,9 @@
 @model IEnumerable<StudentModel>
 
+@*
+    The controller passes this view a collection of students. Model is the strongly typed
+    data this page can use; the loop below creates one table row for each student.
+*@
 @{
     ViewData["Title"] = "Index";
 }
@@ -7,12 +11,14 @@
 <h1>Index</h1>
 
 <p>
+    @* This link targets a Create action; the controller needs an action to handle that URL. *@
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
+                @* DisplayNameFor uses the model property name or its display metadata as a heading. *@
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
@@ -28,6 +34,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @* DisplayFor renders each property's value from the current student. *@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
@@ -37,6 +44,7 @@
                 @Html.DisplayFor(modelItem => item.Credits)
             </td>
                 <td>
+                    @* These links target actions and include the selected student's id in the URL. *@
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })

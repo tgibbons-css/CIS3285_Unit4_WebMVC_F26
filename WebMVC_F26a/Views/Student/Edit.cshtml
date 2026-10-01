@@ -1,18 +1,25 @@
 @model StudentModel
 
+@*
+    The controller passes the selected student to prefill the form. On submit, the form sends
+    the edited values to the Edit POST action, where the controller validates and saves them.
+*@
 @{
     ViewData["Title"] = "Edit Student";
 }
 
 <h1>Edit Student</h1>
 
+@* asp-for connects each form control to a StudentModel property; the form tag helper builds the action URL. *@
 <form asp-action="Edit" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @* Keep the student's id in the submitted form even though it is not editable. *@
     <input type="hidden" asp-for="Id" />
 
     <div class="form-group mb-3">
         <label asp-for="Name" class="control-label"></label>
         <input asp-for="Name" class="form-control" />
+        @* Displays validation errors associated with this property. *@
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 

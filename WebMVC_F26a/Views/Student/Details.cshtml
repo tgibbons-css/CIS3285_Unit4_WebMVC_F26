@@ -1,5 +1,9 @@
 @model StudentModel
 
+@*
+    This view receives one StudentModel from the Details action and displays its properties.
+    The @model directive gives the Razor page a compile-time type for Model.
+*@
 @{
     ViewData["Title"] = "Student Details";
 }
@@ -27,5 +31,6 @@
     </dd>
 </dl>
 
+@* Tag Helpers create links to actions; asp-route-id passes this student's id back to the controller. *@
 <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
 <a asp-action="Index" class="btn btn-secondary">Back to List</a>
