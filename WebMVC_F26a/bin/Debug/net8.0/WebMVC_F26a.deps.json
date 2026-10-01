@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "WebMVC_F26a/1.0.0": {
+        "runtime": {
+          "WebMVC_F26a.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WebMVC_F26a/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

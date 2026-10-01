@@ -1,0 +1,21 @@
+@{
+    // This is the "V" in MVC: the View.
+    // The controller decides which page to open, and this file decides how that page looks.
+    // ViewData is a dictionary that can pass simple values from the controller to the view.
+    // In this case, the page title is set so the browser tab and layout can use it.
+    ViewData["Title"] = "Hello";
+}
+
+@*
+    This Razor file is a .cshtml page. It mixes HTML with C# code.
+    When a browser requests the Hello page, the controller calls this view,
+    and the browser renders the HTML you see here.
+
+    MVC stands for Model-View-Controller:
+    - Model: data and business logic
+    - View: what the user sees on the page
+    - Controller: handles requests and decides which view to show
+*@
+
+<h1>Hello World</h1>
+<p>Welcome to the Hello controller view.</p>
